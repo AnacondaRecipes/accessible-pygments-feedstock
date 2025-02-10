@@ -19,14 +19,13 @@ requirements:
     - python
     - pip
     - setuptools
-    - pygments
     - hatchling
     - hatch-vcs
     - setuptools-scm
     - hatch-fancy-pypi-readme
   run:
     - python
-    - pygments
+    - pygments >= 1.5
 
 test:
   imports:
@@ -49,7 +48,7 @@ about:
   description: |
     A collection of WCAG 2.1 conformant pygments styles
   dev_url: https://github.com/Quansight-Labs/accessible-pygments
-
+  doc_url: https://pypi.org/project/accessible-pygments/
 extra:
   recipe-maintainers:
     - carreau
