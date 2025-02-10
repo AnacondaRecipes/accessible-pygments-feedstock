@@ -25,8 +25,7 @@ requirements:
     - hatch-fancy-pypi-readme
   run:
     - python
-    - pygments >= 1.5
-
+    - pygments >=1.5
 test:
   imports:
     - a11y_pygments.a11y_light
