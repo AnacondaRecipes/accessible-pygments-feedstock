@@ -21,7 +21,7 @@ requirements:
     - setuptools
     - hatchling
     - hatch-vcs
-    - setuptools-scm
+   
     - hatch-fancy-pypi-readme
   run:
     - python
