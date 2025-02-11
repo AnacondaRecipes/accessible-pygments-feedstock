@@ -10,30 +10,31 @@ source:
   sha256: 40918d3e6a2b619ad424cb91e556bd3bd8865443d9f22f1dcdf79e33c8046872
 
 build:
-  noarch: python
+  skip: true   #[py<39]
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   host:
-    - python >=3.9
+    - python
     - pip
-    - setuptools
-    - pygments
     - hatchling
     - hatch-vcs
-    - setuptools-scm
+   
     - hatch-fancy-pypi-readme
   run:
-    - python >=3.9
-    - pygments
-
+    - python
+    - pygments >=1.5
 test:
   imports:
     - a11y_pygments.a11y_light
     - a11y_pygments.a11y_dark
     - a11y_pygments.a11y_high_contrast_light
     - a11y_pygments.a11y_high_contrast_dark
+  commands:
+    - pip check
+  requires:
+    - pip
 
 
 about:
@@ -45,7 +46,7 @@ about:
   description: |
     A collection of WCAG 2.1 conformant pygments styles
   dev_url: https://github.com/Quansight-Labs/accessible-pygments
-
+  doc_url: https://pypi.org/project/accessible-pygments/
 extra:
   recipe-maintainers:
     - carreau
